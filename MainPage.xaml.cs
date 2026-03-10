@@ -1,4 +1,6 @@
 ﻿using Microsoft.Maui.Maps;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 
 namespace FoodStreet
 {
@@ -61,6 +63,43 @@ namespace FoodStreet
             base.OnDisappearing();
             Geolocation.Default.LocationChanged -= OnLocationChanged;
             Geolocation.Default.StopListeningForeground();
+        }
+        private void SetupFoodlFields()
+        {
+            // 1. Tạo danh sách các điểm POI 
+            var poiList = new List<Pin>
+    {
+        new Pin
+        {
+            Label = "Buffet 79k- Hương Việt ",
+            Address = "22 Đ.Tân Quý, Tân Quý, Tân Phú, Thành phố Hồ Chí Minh, Việt Nam,
+            Type = PinType.Place,
+            Location = new Location(10.798538682998302, 106.61961078160493)
+        },
+        new Pin
+        {
+            Label = "LẨU 69K - Lẩu Nhà An ( CN17 )\r\n",
+            Address = "12 Đ.Tân Quý, Tân Quý, Tân Phú, Thành phố Hồ Chí Minh 700000, Việt Nam",
+            Type = PinType.Place,
+            Location = new Location(10.7983923274548, 106.61973052485757)
+        }
+    };
+
+            // 2. Thêm từng điểm vào bản đồ
+            foreach (var poi in poiList)
+            {
+                map.Pins.Add(poi);
+
+            }
+        }
+
+        private async void OnPoiClicked(object sender, PinClickedEventArgs e)
+        {
+            var pin = sender as Pin;
+            if (pin != null)
+            {
+                await DisplayAlert("Thông tin", $"Bạn đã chọn: {pin.Label}\nĐịa chỉ: {pin.Address}", "Đóng");
+            }
         }
     }
 }

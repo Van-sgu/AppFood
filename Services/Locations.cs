@@ -1,12 +1,17 @@
-﻿namespace FoodStreet;
+﻿using Microsoft.Maui.Devices.Sensors;
+
+namespace FoodStreet;
 
 public class LocationService
 {
-    // Sự kiện để báo cho giao diện cập nhật
-    public event EventHandler<Location>? LocationChanged;
+    public event EventHandler<Location> LocationChanged;
+
+    private bool _isListening = false;
 
     public async Task<bool> StartListening()
     {
+        if (_isListening) return true;
+
         try
         {
             // 1. Kiểm tra quyền
@@ -16,29 +21,45 @@ public class LocationService
                 status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             }
 
-            if (status == PermissionStatus.Granted)
-            {
-                // Giải pháp tạm thời: Lấy vị trí 1 lần để tránh crash Service
-                var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
-                var location = await Geolocation.Default.GetLocationAsync(request);
+            Geolocation.Default.LocationChanged += Geolocation_LocationChanged;
 
-                if (location != null)
-                {
-                    LocationChanged?.Invoke(this, location);
-                    return true;
-                }
+            // Độ chính xác cao nhất, cập nhật tối thiểu mỗi 5 giây hoặc khi di chuyển
+            var request = new GeolocationListeningRequest(
+                GeolocationAccuracy.Best,
+                TimeSpan.FromSeconds(5));
+
+            var success = await Geolocation.Default.StartListeningForegroundAsync(request);
+
+            if (success)
+            {
+                _isListening = true;
+                Console.WriteLine("GPS: Đang chạy liên tục...");
             }
-            return false;
+
+            return success;
+
         }
         catch (Exception ex)
         {
-            System.Diagnostics.Debug.WriteLine($"Lỗi GPS: {ex.Message}");
+            Console.WriteLine($"Lỗi GPS: {ex.Message}");
             return false;
         }
     }
 
+    private void Geolocation_LocationChanged(object? sender, GeolocationLocationChangedEventArgs e)
+    {
+        // Khi hệ thống nhận tọa độ mới, nó tự gọi hàm này
+        LocationChanged?.Invoke(this, e.Location);
+        Console.WriteLine($"GPS: Tọa độ mới {e.Location.Latitude}, {e.Location.Longitude}");
+    }
+
     public void StopListening()
     {
-        // Khi dùng GetLocationAsync thì không cần hủy đăng ký liên tục
+        if (!_isListening) return;
+
+        Geolocation.Default.LocationChanged -= Geolocation_LocationChanged;
+        Geolocation.Default.StopListeningForeground();
+        _isListening = false;
+        Console.WriteLine("GPS: Đã dừng.");
     }
 }

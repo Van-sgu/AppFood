@@ -13,8 +13,10 @@ public partial class MainPage : ContentPage
         InitializeComponent();
 
         // 2. Đăng ký sự kiện LocationChanged ngay tại đây
-        _locationService.LocationChanged += (sender, location) =>
-        {
+        _locationService.LocationChanged += LocationChangedReceived;
+    }
+    private void LocationChangedReceived(object? sender, Location location)
+    {
             // Bắt buộc dùng MainThread để cập nhật giao diện (UI)
             MainThread.BeginInvokeOnMainThread(() =>
             {
@@ -23,20 +25,20 @@ public partial class MainPage : ContentPage
                     var mapSpan = MapSpan.FromCenterAndRadius(
                         new Location(location.Latitude, location.Longitude),
                         Distance.FromKilometers(0.5));
-
+                    //Di chuyển camera bản đồ theo người dùng
                     map.MoveToRegion(mapSpan);
 
                     // Hiển thị chấm xanh vị trí người dùng
                     map.IsShowingUser = true;
                 }
             });
-        };
-    }
+        }
+    
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        // 3. Bắt đầu nghe vị trí khi trang xuất hiện
+        //Bắt đầu nghe vị trí khi trang xuất hiện
         try
         {
             await _locationService.StartListening();
@@ -59,7 +61,7 @@ public partial class MainPage : ContentPage
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
-        // 4. Bắt buộc phải Stop để giải phóng tài nguyên hệ thống
+        //Dừng lấy vị trí để tiết kiệm pin 
         _locationService.StopListening();
     }
 }

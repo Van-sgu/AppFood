@@ -8,15 +8,5 @@
 
         <maps:Map x:Name="map" Grid.Row="0" />
 
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="30
-                                 " Spacing="40">
-                <Label Text="Chào mừng đến với App" 
-                       FontSize="24" 
-                       HorizontalOptions="Center" />
-
-            </VerticalStackLayout>
-        </ScrollView>
-
     </Grid>
 </ContentPage>

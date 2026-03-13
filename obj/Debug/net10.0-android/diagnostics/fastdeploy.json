@@ -5,13 +5,13 @@
     "target.prop.ro.product.cpu.abilist": "arm64-v8a;armeabi-v7a;armeabi",
     "target.prop.ro.product.manufacturer": "OPPO",
     "target.prop.ro.product.model": "CPH1933",
-    "target.prop.ro.product.cpu.abi": "arm64-v8a",
+    "target.prop.ro.product.cpu.abi": "unknown",
     "deploy.error.code": "",
     "deploy.tool": "xamarin.sync",
     "deploy.result": "Success",
     "deploy.supports.fastdev": "True",
     "deploy.systemapp": "False",
-    "deploy.duration.ms": "653",
+    "deploy.duration.ms": "8576",
     "pii.deploy.error": "",
     "pii.deploy.file": ""
   }

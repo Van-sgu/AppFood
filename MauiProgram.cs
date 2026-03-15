@@ -21,7 +21,7 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-        builder.Services.AddSingleton<LocationService>();
+        builder.Services.AddSingleton<Locations>();
 
         return builder.Build();
     }

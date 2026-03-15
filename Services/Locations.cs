@@ -2,7 +2,7 @@
 
 namespace FoodStreet;
 
-public class LocationService
+public class Locations
 {
     public event EventHandler<Location> LocationChanged;
 
@@ -30,11 +30,11 @@ public class LocationService
 
             var success = await Geolocation.Default.StartListeningForegroundAsync(request);
 
-            if (success)
-            {
-                _isListening = true;
-                Console.WriteLine("GPS: Đang chạy liên tục...");
-            }
+            //if (success)
+            //{
+            //    _isListening = true;
+            //    Console.WriteLine("GPS: Đang chạy liên tục...");
+            //}
 
             return success;
 

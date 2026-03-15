@@ -3,7 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
              x:Class="FoodStreet.MainPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Danh sách" 
+                     IconImageSource="list_icon.png" 
+                     Order="Primary"
+                     Clicked="OnShowListClicked" />
+    </ContentPage.ToolbarItems>
+
     <Grid RowDefinitions="*" ColumnDefinitions="*">
         <maps:Map x:Name="map" 
                   IsShowingUser="True"

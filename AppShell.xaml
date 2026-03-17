@@ -4,19 +4,6 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:FoodStreet"
-    Title="FoodStreet"
-    Shell.FlyoutBehavior="Disabled">
-
-    <TabBar>
-        <ShellContent
-            Route="map"
-            Title="Bản đồ"
-            ContentTemplate="{DataTemplate local:MainPage}" />
-
-        <ShellContent
-            Route="home"
-            Title="Cài đặt"
-            ContentTemplate="{DataTemplate local:MainPage}" />
-
-    </TabBar>
+    Shell.NavBarIsVisible="False"
+    Title="FoodStreet">
 </Shell>

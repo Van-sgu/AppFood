@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+             xmlns:models="clr-namespace:FoodStreet.Models"
+             
+             xmlns:sensors="http://schemas.microsoft.com/dotnet/2021/maui/sensors"
+             x:Class="FoodStreet.Pages.Map"
+             Title="Khu phố Ẩm thực Vĩnh Khánh">
+    <Grid>
+        <maps:Map
+        x:Name="map"
+        IsShowingUser="True"
+        MapType="Street" />
+        
+        <HorizontalStackLayout HorizontalOptions="Center" 
+                       VerticalOptions="End" 
+                       Margin="20" 
+                       Spacing="10">
+            <Button x:Name="BtnPlay" 
+            Text="▶ Play" 
+            BackgroundColor="Green" 
+            Clicked="OnPlayClicked"/>
+            
+            <Button x:Name="BtnPause" 
+            Text="|| Pause" 
+            BackgroundColor="Red" 
+            Clicked="OnPauseClicked"
+            IsEnabled="False"/>
+        </HorizontalStackLayout>
+        
+    </Grid>
+    
+</ContentPage>

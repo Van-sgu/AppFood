@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RZ9X3enMVBI=",
+  "dgSpecHash": "Ne+4+ksx4L4=",
   "success": true,
   "projectFilePath": "D:\\AppFood\\AppFood\\AppFood.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Comet\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\Comet\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
+    "C:\\Users\\Comet\\.nuget\\packages\\dapper\\2.1.72\\dapper.2.1.72.nupkg.sha512",
     "C:\\Users\\Comet\\.nuget\\packages\\googlegson\\2.13.1.1\\googlegson.2.13.1.1.nupkg.sha512",
     "C:\\Users\\Comet\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Comet\\.nuget\\packages\\microsoft.data.sqlclient\\6.1.4\\microsoft.data.sqlclient.6.1.4.nupkg.sha512",

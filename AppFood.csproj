@@ -61,10 +61,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.1.72" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="10.0.41" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<MauiXaml Update="Pages\DetailPoi.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Map.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\SettingsPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+
+		<Compile Update="Pages\Map.xaml.cs">
+			<DependentUpon>Map.xaml</DependentUpon>
+		</Compile>
+
+		<Compile Update="Pages\DetailPoi.xaml.cs">
+			<DependentUpon>DetailPoi.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>

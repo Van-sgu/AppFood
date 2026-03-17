@@ -38,6 +38,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.13.1.1": {
         "type": "package",
         "dependencies": {
@@ -3112,6 +3125,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.13.1.1": {
         "type": "package",
         "dependencies": {
@@ -6140,6 +6166,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -9176,6 +9215,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.13.1.1": {
         "type": "package",
         "dependencies": {
@@ -12208,6 +12260,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.13.1.1": {
         "type": "package",
         "dependencies": {
@@ -15236,6 +15301,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -18276,6 +18354,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -19229,6 +19320,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -20136,6 +20240,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -21051,6 +21168,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -21958,6 +22088,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -22873,6 +23016,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -23784,6 +23940,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -24741,6 +24910,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -25648,6 +25830,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -26563,6 +26758,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -27470,6 +27678,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -28385,6 +28606,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -29296,6 +29530,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -30504,6 +30751,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -31600,6 +31860,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -32704,6 +32977,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -33804,6 +34090,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -34900,6 +35199,19 @@
         },
         "runtime": {
           "lib/net8.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
             "related": ".xml"
           }
         }
@@ -36021,6 +36333,27 @@
         "lib/net8.0/Azure.Identity.xml",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Dapper/2.1.72": {
+      "sha512": "ns4mGqQd9a/MhP8m6w556vVlZIa0/MfUu03zrxjZC/jlr1uVCsUac8bkdB+Fs98Llbd56rRSo1eZH5VVmeGZyw==",
+      "type": "package",
+      "path": "dapper/2.1.72",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.72.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net10.0/Dapper.dll",
+        "lib/net10.0/Dapper.xml",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net8.0/Dapper.dll",
+        "lib/net8.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
       ]
     },
     "GoogleGson/2.13.1.1": {
@@ -41293,6 +41626,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-android36.0": [
+      "Dapper >= 2.1.72",
       "Microsoft.Data.SqlClient >= 6.1.4",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.1",
@@ -41300,6 +41634,7 @@
       "Microsoft.NET.ILLink.Tasks >= 10.0.2"
     ],
     "net10.0-ios26.2": [
+      "Dapper >= 2.1.72",
       "Microsoft.Data.SqlClient >= 6.1.4",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.1",
@@ -41307,6 +41642,7 @@
       "Microsoft.NET.ILLink.Tasks >= 10.0.2"
     ],
     "net10.0-maccatalyst26.2": [
+      "Dapper >= 2.1.72",
       "Microsoft.Data.SqlClient >= 6.1.4",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.1",
@@ -41314,6 +41650,7 @@
       "Microsoft.NET.ILLink.Tasks >= 10.0.2"
     ],
     "net10.0-windows10.0.19041": [
+      "Dapper >= 2.1.72",
       "Microsoft.Data.SqlClient >= 6.1.4",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.1",
@@ -41387,6 +41724,10 @@
       "net10.0-android36.0": {
         "targetAlias": "net10.0-android",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.72, )"
+          },
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[6.1.4, )"
@@ -41711,6 +42052,10 @@
       "net10.0-ios26.2": {
         "targetAlias": "net10.0-ios",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.72, )"
+          },
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[6.1.4, )"
@@ -42035,6 +42380,10 @@
       "net10.0-maccatalyst26.2": {
         "targetAlias": "net10.0-maccatalyst",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.72, )"
+          },
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[6.1.4, )"
@@ -42360,6 +42709,10 @@
       "net10.0-windows10.0.19041": {
         "targetAlias": "net10.0-windows10.0.19041.0",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.72, )"
+          },
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[6.1.4, )"

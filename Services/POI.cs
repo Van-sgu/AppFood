@@ -15,6 +15,8 @@ namespace FoodStreet.Services
         public bool isInside { get; set; } = false;
         public double ActivationRadius { get; set; }
 
+        public string Description { get; set; }
+        public double Rating { get; set; }
         public DateTime LastTriggered { get; set; } = DateTime.MinValue;
     }
 }

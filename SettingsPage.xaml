@@ -1,0 +1,64 @@
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FoodStreet.SettingsPage"
+    Title="Cài đặt"
+    BackgroundColor="#f5f5f5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="15">
+
+            <!-- ÂM LƯỢNG -->
+            <Frame CornerRadius="15" Padding="15" BackgroundColor="White">
+                <VerticalStackLayout>
+                    <Label x:Name="volumeLabel" Text="Âm lượng: 100%" />
+                    <Slider Minimum="0" Maximum="100" ValueChanged="OnVolumeChanged"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- TỐC ĐỘ -->
+            <Frame CornerRadius="15" Padding="15" BackgroundColor="White">
+                <VerticalStackLayout>
+                    <Label x:Name="speedLabel" Text="Tốc độ giọng nói: 1.0x"/>
+                    <Slider Minimum="0.5" Maximum="2" Value="1"
+                            ValueChanged="OnSpeedChanged"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- GPS -->
+            <Frame CornerRadius="15" Padding="15" BackgroundColor="White">
+                <Grid ColumnDefinitions="*,Auto">
+                    <Label Text="GPS chạy nền" VerticalOptions="Center"/>
+                    <Switch x:Name="gpsSwitch" Grid.Column="1"/>
+                </Grid>
+            </Frame>
+
+            <!-- NGÔN NGỮ -->
+            <Label Text="Ngôn ngữ" FontAttributes="Bold"/>
+
+            <Frame CornerRadius="15" Padding="15" BackgroundColor="White">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Label Text="🌐" FontSize="20"/>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="Ngôn ngữ"/>
+                        <Label x:Name="languageLabel" Text="Tiếng Việt" FontSize="12"/>
+                    </VerticalStackLayout>
+
+                    <Button Text=">"
+                            Grid.Column="2"
+                            Clicked="OnLanguageClicked"/>
+                </Grid>
+            </Frame>
+
+            <!-- RESET -->
+            <Button Text="Reset về mặc định"
+                    BorderColor="Blue"
+                    BorderWidth="1"
+                    TextColor="Blue"
+                    BackgroundColor="Transparent"
+                    Clicked="OnResetClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

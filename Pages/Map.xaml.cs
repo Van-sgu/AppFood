@@ -5,49 +5,60 @@ using FoodStreet.Services;
 using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Devices.Sensors;
 using Microsoft.Maui.Maps;
-using System.Net.NetworkInformation;
+
 
 namespace FoodStreet.Pages;
 
+
 public partial class Map : ContentPage
 {
-    private readonly DataServices _dataService = new DataServices();
-    private readonly Notifications _notifyService = new Notifications();
-    private List<POI> _locations = new();
-    private Dictionary<POI, Pin> _Pins = new();
+    private readonly GeofenceService geofenceService = new GeofenceService();
+    private readonly DataServices _dbService;
+    private readonly Notifications _notifyService;
+    List <POI> locations = new();
+    Dictionary<POI, Pin> _Pins = new();
 
-    private int? _lastTriggeredId = null; // Lưu ID quán vừa đọc để tránh lặp
     private CancellationTokenSource? _trackingCts;
 
-    public Map()
+    public Map(DataServices dbService, Notifications notifyService)
     {
         InitializeComponent();
+        _dbService = dbService;
+        _dbService = dbService;
+        _notifyService = notifyService;
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
         await LoadData();
-        await _notifyService.LoadPoisFromSqlAsync(); //Nạp dữ liệu từ SQL server
         StartLocationTracking();
-        //Bắt đầu nghe vị trí khi trang xuất hiện
-        var vinhkhanh = new Location(10.7765, 106.6675);
-        map.MoveToRegion(MapSpan.FromCenterAndRadius(vinhkhanh, Distance.FromKilometers(0.5)));
+        DefaultLoc();
+    }
+    private void DefaultLoc()
+    {
+        try
+        {
+            var vinhkhanh = new Location(10.7765, 106.6675);
+            var mapSpan = MapSpan.FromCenterAndRadius(vinhkhanh, Distance.FromKilometers(0.5));
+            map.MoveToRegion(mapSpan);
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"Lỗi khi di chuyển map: {ex.Message}");
+        }
     }
     private async Task LoadData()
     {
         try
         {
-            _locations = await _dataService.GetPoisFromDbAsync();
-            if (_locations == null || !_locations.Any()) return;
+            locations = await _dbService.GetItemsAsync();
+            if (locations == null || !locations.Any()) return;
 
-            map.Pins.Clear();
-            map.MapElements.Clear();
-            _Pins.Clear();
             // Sử dụng một màu xanh 
-            var themeColor = Color.FromArgb("#330099FF");
+            var themeColor = Color.FromRgba(0, 153, 255, 51);
 
-            foreach (var loc in _locations)
+            foreach (var loc in locations)
             {
                 var location = new Location(loc.Latitude, loc.Longitude);
 
@@ -75,33 +86,28 @@ public partial class Map : ContentPage
                     FillColor = themeColor
                 });
             }
-
-            // Zoom vào vùng có dữ liệu
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(
-                new Location(_locations[0].Latitude, _locations[0].Longitude), Distance.FromMeters(500)));
         }
-        catch (Exception ex) { await DisplayAlert("Lỗi", ex.Message, "OK"); }
+        catch (Exception ex) 
+        { 
+            // Sửa lỗi DisplayAlert Obsolete ở đây
+            await DisplayAlert("Lỗi", ex.Message, "OK"); 
+        }
     }
-    private void HighlightPoi(POI activePoi)
+    private void HighlightPoi(List<POI> activePois)
     {
-        MainThread.BeginInvokeOnMainThread(() =>
+        foreach (var item in _Pins)
         {
-            // Reset tất cả các Pin về mặc định
-            foreach (var entry in _Pins)
+            item.Value.Label = item.Key.Name;
+            item.Value.Type = PinType.Place;
+        }
+        foreach (var poi in activePois)
+        {
+            if (_Pins.TryGetValue(poi, out var pin))
             {
-                entry.Value.Label = entry.Key.Name;
-                entry.Value.Type = PinType.Place;
-            }
-
-            // Làm nổi bật Pin của quán đang ở gần
-            if (_Pins.TryGetValue(activePoi, out var pin))
-            {
-                pin.Label = "⭐ Đang ở gần: " + activePoi.Name;
+                pin.Label = $"⭐ {poi.Name}";
                 pin.Type = PinType.SavedPin;
-                //pin.ShowInfoWindow(); // Tự động hiện bảng tên
-
             }
-        });
+        }
     }
     private async void StartLocationTracking()
     {
@@ -111,17 +117,15 @@ public partial class Map : ContentPage
             while (!_trackingCts.Token.IsCancellationRequested)
             {
                 var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
-                var location = await Geolocation.Default.GetLocationAsync(request, _trackingCts.Token);
+                var loc = await Geolocation.Default.GetLocationAsync(request, _trackingCts.Token);
 
-                if (location != null)
+                if (loc != null)
                 {
-                    var activePoi = _notifyService.GetNearestPoi(location, 30);
+                    var activePois = geofenceService.CheckNearby(loc, locations);
 
-                    if (activePoi != null)
+                    if (activePois != null)
                     {
-                        // Gọi thuyết minh (Hàm này đã có logic Play/Pause bên trong)
-                        await _notifyService.SpeakAsync(activePoi);
-                        HighlightPoi(activePoi);
+                        HighlightPoi(activePois);
                     }
                 }
                 await Task.Delay(5000, _trackingCts.Token);
@@ -137,30 +141,5 @@ public partial class Map : ContentPage
         _trackingCts?.Dispose();
         _trackingCts = null;
         _notifyService.StopCurrentSpeech();
-    }
-    private void OnLocationChanged(Location userLocation)
-    {
-        var poi = _notifyService.GetNearestPoi(userLocation, 30);
-
-        if (poi != null)
-        {
-            // Tự động phát thuyết minh
-            _ = _notifyService.SpeakAsync(poi);
-        }
-    }
-    private void OnPlayClicked(object sender, EventArgs e)
-    {
-        _notifyService.Play();
-        UpdateButtonStates(true);
-    }
-    private void OnPauseClicked(object sender, EventArgs e)
-    {
-        _notifyService.Pause();
-        UpdateButtonStates(false);
-    }
-    private void UpdateButtonStates(bool isPlaying)
-    {
-        if (BtnPlay != null) BtnPlay.IsEnabled = !isPlaying;
-        if (BtnPause != null) BtnPause.IsEnabled = isPlaying;
     }
 }

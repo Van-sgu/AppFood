@@ -392,6 +392,10 @@ D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windo
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.System.Projection.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.Widgets.Projection.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\SQLite-net.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\SQLitePCLRaw.batteries_v2.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\SQLitePCLRaw.core.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\SQLitePCLRaw.provider.e_sqlite3.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\System.ClientModel.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\System.Configuration.ConfigurationManager.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\System.Diagnostics.EventLog.Messages.dll
@@ -452,6 +456,7 @@ D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Graph
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\WebView2Loader.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.WindowsAppRuntime.Bootstrap.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\e_sqlite3.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.SDK.NET.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\WinRT.Runtime.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Controls.HotReload.Forms.dll

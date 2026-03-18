@@ -1,4 +1,4 @@
-﻿namespace FoodStreet;
+﻿namespace FoodStreet.Pages;
 
 public partial class SettingsPage : ContentPage
 {
@@ -14,14 +14,16 @@ public partial class SettingsPage : ContentPage
     private void OnVolumeChanged(object sender, ValueChangedEventArgs e)
     {
         volume = e.NewValue;
-        volumeLabel.Text = $"Âm lượng: {(int)volume}%";
+        if (volumeLabel != null)
+            volumeLabel.Text = $"Âm lượng: {(int)volume}%";
     }
 
     // 🗣️ TỐC ĐỘ
     private void OnSpeedChanged(object sender, ValueChangedEventArgs e)
     {
         speed = e.NewValue;
-        speedLabel.Text = $"Tốc độ giọng nói: {speed:0.0}x";
+        if (speedLabel != null)
+            speedLabel.Text = $"Tốc độ giọng nói: {speed:0.0}x";
     }
 
     // 🌐 NGÔN NGỮ

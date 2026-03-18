@@ -36,6 +36,10 @@ D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Graphics.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Maps.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.SqlServer.Server.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\SQLite-net.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.batteries_v2.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.core.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.provider.e_sqlite3.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\System.ClientModel.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\System.Configuration.ConfigurationManager.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\System.Diagnostics.EventLog.dll
@@ -90,6 +94,7 @@ D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\vi\Microsoft.Ma
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\zh-HK\Microsoft.Maui.Controls.resources.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\zh-Hans\Microsoft.Maui.Controls.resources.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\zh-Hant\Microsoft.Maui.Controls.resources.dll
+D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\libe_sqlite3.dylib
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.CSharp.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualBasic.Core.dll
 D:\AppFood\AppFood\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualBasic.dll

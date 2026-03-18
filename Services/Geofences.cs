@@ -16,8 +16,8 @@ public class GeofenceService
         foreach (var poi in pois)
         {
             double distanceKm = Location.CalculateDistance(
-                userLocation.Latitude, userLocation.Longitude,
-                poi.Latitude, poi.Longitude,
+                userLocation,
+                new Location(poi.Latitude, poi.Longitude ),
                 DistanceUnits.Kilometers);
 
             double distanceMeters = distanceKm * 1000;

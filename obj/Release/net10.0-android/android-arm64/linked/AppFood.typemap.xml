@@ -1,0 +1,8 @@
+<api type="release" assembly-name="AppFood" mvid="f3bea77322004b51aa443f8cf6d3bbcd">
+  <module assembly-name="AppFood" mvid="f3bea77322004b51aa443f8cf6d3bbcd" mvid-bytes="c6e+8wAiUUuqRD+M9tO7zQ==">
+    <types-scratch>
+      <entry key="crc64d2dc72ff6849af50/MainActivity" java-name="crc64d2dc72ff6849af50/MainActivity" managed-type-name="FoodStreet.MainActivity" token="33554441" />
+      <entry key="crc64d2dc72ff6849af50/MainApplication" java-name="crc64d2dc72ff6849af50/MainApplication" managed-type-name="FoodStreet.MainApplication" token="33554442" />
+    </types-scratch>
+  </module>
+</api>

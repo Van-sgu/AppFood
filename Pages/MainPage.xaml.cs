@@ -1,27 +1,34 @@
-﻿using FoodStreet.Models;
+﻿using FoodStreet.Data;
+using FoodStreet.Models;
 using FoodStreet.Services;
-
-using Microsoft.Maui.Controls.Maps;
-using Microsoft.Maui.Maps;
 
 //trang chủ chính - hiển thị khi người dùng mở app lên
 
-namespace FoodStreet;
+namespace FoodStreet.Pages;
 
 public partial class MainPage : ContentPage
 {
-    public MainPage()
+    private readonly DataServices _dbService;
+    public MainPage(DataServices dbService)
     {
         InitializeComponent();
+        _dbService = dbService;
     }
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        //Bắt đầu nghe vị trí khi trang xuất hiện
-        var vinhkhanh = new Location(10.7765, 106.6675);
-        map.MoveToRegion(MapSpan.FromCenterAndRadius(vinhkhanh, Distance.FromKilometers(0.5)));
+        try
+        {
+            var items = await _dbService.GetItemsAsync();
+
+            if (items != null)
+            {
+                MyCollectionView.ItemsSource = items;
+            }
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"Lỗi nạp dữ liệu: {ex.Message}");
+        }
     }
-    //Bấm vào quán -> mở app
-
-
 }

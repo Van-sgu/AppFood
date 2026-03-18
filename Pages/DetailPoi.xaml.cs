@@ -6,7 +6,7 @@ namespace FoodStreet.Pages
     public partial class DetailPoi : ContentPage
     {
         private readonly POI _poi;
-        private readonly Notifications _notificationService = new Notifications();
+        Notifications _notifyService;
 
         public DetailPoi(POI poiData)
         {
@@ -27,9 +27,9 @@ namespace FoodStreet.Pages
                 button.Text = "⌛ Đang phát...";
 
                 // Bật chế độ cho phép nói (vì trang chi tiết là do người dùng chủ động nhấn)
-                _notificationService.Play();
+                _notifyService.Play();
 
-                await _notificationService.SpeakAsync(_poi);
+                await _notifyService.SpeakAsync(_poi);
             }
             catch (Exception ex)
             {
@@ -45,8 +45,7 @@ namespace FoodStreet.Pages
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            // Quan trọng: Dừng thuyết minh ngay lập tức khi người dùng thoát trang chi tiết
-            _notificationService.StopCurrentSpeech();
+            _notifyService.StopCurrentSpeech();
         }
     }
 }

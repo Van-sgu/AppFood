@@ -1,0 +1,11 @@
+<api type="release" assembly-name="Microsoft.Identity.Client" mvid="29483ec905134b6b9248059e803fcd28">
+  <module assembly-name="Microsoft.Identity.Client" mvid="29483ec905134b6b9248059e803fcd28" mvid-bytes="yT5IKRMFa0uSSAWegD/NKA==">
+    <types-scratch>
+      <entry key="crc648316b0a9aa8cfd61/BrowserTabActivity" java-name="crc648316b0a9aa8cfd61/BrowserTabActivity" managed-type-name="Microsoft.Identity.Client.BrowserTabActivity" token="33554843" />
+      <entry key="microsoft/identity/client/AuthenticationActivity" java-name="microsoft/identity/client/AuthenticationActivity" managed-type-name="Microsoft.Identity.Client.Platforms.Android.SystemWebview.AuthenticationActivity" token="33554853" />
+      <entry key="crc64ed1888fb4925e3b7/AuthenticationAgentActivity" java-name="crc64ed1888fb4925e3b7/AuthenticationAgentActivity" managed-type-name="Microsoft.Identity.Client.Platforms.Android.EmbeddedWebview.AuthenticationAgentActivity" token="33554858" />
+      <entry key="crc64ed1888fb4925e3b7/AuthenticationAgentActivity_CoreWebViewClient" java-name="crc64ed1888fb4925e3b7/AuthenticationAgentActivity_CoreWebViewClient" managed-type-name="Microsoft.Identity.Client.Platforms.Android.EmbeddedWebview.AuthenticationAgentActivity/CoreWebViewClient" token="33554859" />
+      <entry key="crc64ed1888fb4925e3b7/AuthenticationAgentActivity_OnApplyWindowInsetsListener" java-name="crc64ed1888fb4925e3b7/AuthenticationAgentActivity_OnApplyWindowInsetsListener" managed-type-name="Microsoft.Identity.Client.Platforms.Android.EmbeddedWebview.AuthenticationAgentActivity/OnApplyWindowInsetsListener" token="33554860" />
+    </types-scratch>
+  </module>
+</api>

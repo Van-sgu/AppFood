@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using FoodStreet.Data;
+using FoodStreet.Pages;
+using FoodStreet.Services;
+using Microsoft.Extensions.Logging;
 
 namespace FoodStreet;
 
@@ -21,11 +24,15 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-        builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<Pages.MainPage>();
+        builder.Services.AddSingleton<DataServices>();
+        builder.Services.AddSingleton<Services.LocationService>();
+        builder.Services.AddSingleton<Services.GeofenceService>();
+        builder.Services.AddSingleton<Notifications>();
+        builder.Services.AddSingleton<AutoNarrationEngine>();
 
-        builder.Services.AddSingleton<Services.Notifications>();
-        builder.Services.AddSingleton<Data.DataServices>();
-
+        builder.Services.AddTransient<Pages.Map>();
+        builder.Services.AddTransient<MainPage>();
         return builder.Build();
     }
 }

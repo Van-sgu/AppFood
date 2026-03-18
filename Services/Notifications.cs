@@ -8,16 +8,19 @@ public class Notifications
     private int? _currentPoiId = null;
     private CancellationTokenSource? _cts;
     private bool _isSpeaking = false;
-    private List<POI> _poiList = new();
-    private readonly DataServices _sqlService = new();
+    List<POI> _poiList = new();
+    DataServices _dbService = new();
 
     public bool IsAutoNarrateEnabled { get; private set; } = false;
-
+    public Notifications(DataServices dbService)
+    {
+        _dbService = dbService;
+    }
     public async Task LoadPoisFromSqlAsync()
     {
         try
         {
-            _poiList = await _sqlService.GetPoisFromDbAsync();
+            _poiList = await _dbService.GetItemsAsync();
         }
         catch { /* Log error */ }
     }
@@ -61,12 +64,5 @@ public class Notifications
             _cts = null;
         }
         _isSpeaking = false;
-    }
-    public POI GetNearestPoi(Location userLocation, double radiusMeters)
-    {
-        return _poiList
-            .Where(p => userLocation.CalculateDistance(p.Latitude, p.Longitude, DistanceUnits.Kilometers) * 1000 <= radiusMeters)
-            .OrderByDescending(p => p.Priority)
-            .FirstOrDefault();
     }
 }

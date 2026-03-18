@@ -1,24 +1,52 @@
-﻿using Dapper;
+﻿using SQLite;
 using FoodStreet.Models;
-using Microsoft.Data.SqlClient;
-using System.Collections.Generic;
 
 namespace FoodStreet.Data
 {
     public class DataServices
     {
-        private readonly string _connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FoodStreetDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30;";
+        SQLiteAsyncConnection _db;
 
-        public async Task<List<POI>> GetPoisFromDbAsync()
+        private async Task<SQLiteAsyncConnection> GetDatabaseAsync()
         {
-            using var db = new SqlConnection(_connectionString);
-            string sql = @"SELECT Id, Name, Priority, Description,
-                       (CAST(Latitude AS FLOAT) / 1000000) as Latitude, 
-                       (CAST(Longitude AS FLOAT) / 1000000) as Longitude,
-                       50 as Radius
-                       FROM Locations";
-            return db.Query<POI>(sql).ToList();
+            if (_db != null) return _db;
 
+            var dbPath = Path.Combine(FileSystem.Current.AppDataDirectory, "FoodStreet.db3");
+            if (!File.Exists(dbPath))
+            {
+                try
+                {
+                    using var stream = await FileSystem.OpenAppPackageFileAsync("FoodStreet.db3");
+                    using var newStream = File.Create(dbPath);
+                    await stream.CopyToAsync(newStream);
+                }
+                catch (Exception ex)
+                {
+                    // Debug lỗi nếu bạn quên chưa để Build Action là MauiAsset
+                    System.Diagnostics.Debug.WriteLine($"Lỗi copy database: {ex.Message}");
+                }
+            }
+
+            _db = new SQLiteAsyncConnection(dbPath);
+            return _db;
+        }
+
+        public async Task<List<POI>> GetItemsAsync()
+        {
+            var db = await GetDatabaseAsync();
+            return await _db.Table<POI>().ToListAsync();
+        }
+
+        public async Task<int> SaveItemAsync(POI item)
+        {
+            var db = await GetDatabaseAsync();
+            return item.Id != 0 ? await db.UpdateAsync(item) : await db.InsertAsync(item);
+        }
+
+        public async Task<int> DeleteItemAsync(POI item)
+        {
+            var db = await GetDatabaseAsync();
+            return await _db.DeleteAsync(item);
         }
     }
 }

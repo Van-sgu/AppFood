@@ -11,7 +11,7 @@ public class Notifications
     List<POI> _poiList = new();
     DataServices _dbService = new();
 
-    public bool IsAutoNarrateEnabled { get; private set; } = false;
+    public bool IsAutoNarrateEnabled { get; private set; } = true;
     public Notifications(DataServices dbService)
     {
         _dbService = dbService;
@@ -35,10 +35,9 @@ public class Notifications
     }
     public async Task SpeakAsync(POI poi)
     {
-        if (!IsAutoNarrateEnabled) return;
-        if (_currentPoiId == poi.Id && _isSpeaking) return;
         StopCurrentSpeech();
 
+        if (string.IsNullOrWhiteSpace(poi.Tts)) return;
         _cts = new CancellationTokenSource();
         _currentPoiId = poi.Id;
         _isSpeaking = true;
@@ -46,6 +45,7 @@ public class Notifications
         try
 
         {
+            var options = new SpeechOptions { Pitch = 1.0f, Volume = 1.0f };
             await TextToSpeech.Default.SpeakAsync(poi.Tts, new() { Pitch = 1.0f, Volume = 1.0f }, _cts.Token);
         }
         catch (OperationCanceledException) { }

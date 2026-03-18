@@ -1,4 +1,5 @@
-﻿using FoodStreet.Models;
+﻿using FoodStreet.Data;
+using FoodStreet.Models;
 using FoodStreet.Services;
 
 namespace FoodStreet.Pages
@@ -6,12 +7,13 @@ namespace FoodStreet.Pages
     public partial class DetailPoi : ContentPage
     {
         private readonly POI _poi;
-        Notifications _notifyService;
+        private readonly Notifications _notifyService;
 
         public DetailPoi(POI poiData)
         {
             InitializeComponent();
             _poi = poiData;
+            _notifyService = new Notifications(new DataServices());
 
             lblTitle.Text = _poi.Name;
             lblDescription.Text = _poi.Tts;
@@ -19,14 +21,12 @@ namespace FoodStreet.Pages
         private async void OnSpeakClicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
-
             try
             {
                 // Vô hiệu hóa nút để tránh người dùng nhấn liên tục
                 button.IsEnabled = false;
                 button.Text = "⌛ Đang phát...";
 
-                // Bật chế độ cho phép nói (vì trang chi tiết là do người dùng chủ động nhấn)
                 _notifyService.Play();
 
                 await _notifyService.SpeakAsync(_poi);
@@ -37,7 +37,6 @@ namespace FoodStreet.Pages
             }
             finally
             {
-                // Trả lại trạng thái ban đầu cho nút bấm
                 button.IsEnabled = true;
                 button.Text = "🔊 Nghe thuyết minh";
             }

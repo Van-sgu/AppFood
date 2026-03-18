@@ -2,6 +2,7 @@
 
 namespace FoodStreet.Models
 {
+    [Table("POI")]
     public class POI
     {
         [PrimaryKey, AutoIncrement]

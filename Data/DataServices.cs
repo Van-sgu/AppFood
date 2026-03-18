@@ -10,24 +10,23 @@ namespace FoodStreet.Data
         private async Task<SQLiteAsyncConnection> GetDatabaseAsync()
         {
             if (_db != null) return _db;
-
-            var dbPath = Path.Combine(FileSystem.Current.AppDataDirectory, "FoodStreet.db3");
-            if (!File.Exists(dbPath))
+            string dbPath;
+#if WINDOWS
+            dbPath = @"D:\AppFood\FoodStreet.db3";
+            var directory = Path.GetDirectoryName(dbPath);
+            if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+#else
+            dbPath = Path.Combine(FileSystem.AppDataDirectory, "FoodStreet.db3");
+#endif
+            if (true) 
             {
-                try
-                {
-                    using var stream = await FileSystem.OpenAppPackageFileAsync("FoodStreet.db3");
-                    using var newStream = File.Create(dbPath);
-                    await stream.CopyToAsync(newStream);
-                }
-                catch (Exception ex)
-                {
-                    // Debug lỗi nếu bạn quên chưa để Build Action là MauiAsset
-                    System.Diagnostics.Debug.WriteLine($"Lỗi copy database: {ex.Message}");
-                }
+                using var stream = await FileSystem.OpenAppPackageFileAsync("FoodStreet.db3");
+                using var newStream = File.Create(dbPath);
+                await stream.CopyToAsync(newStream);
             }
 
             _db = new SQLiteAsyncConnection(dbPath);
+            await _db.CreateTableAsync<POI>();
             return _db;
         }
 

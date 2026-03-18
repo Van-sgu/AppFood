@@ -18,18 +18,8 @@ D:\AppFood\AppFood\obj\Debug\net10.0-android\AppFood.csproj.AssemblyReference.ca
 D:\AppFood\AppFood\obj\Debug\net10.0-android\mauiimage.inputs
 D:\AppFood\AppFood\obj\Debug\net10.0-android\mauifont.inputs
 D:\AppFood\AppFood\obj\Debug\net10.0-android\mauisplash.inputs
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\drawable-hdpi\splash.png
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\drawable-mdpi\splash.png
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\drawable-xhdpi\splash.png
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\drawable-xxhdpi\splash.png
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\drawable-xxxhdpi\splash.png
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\drawable\maui_splash_image.xml
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\sp\values\maui_colors.xml
 D:\AppFood\AppFood\obj\Debug\net10.0-android\mauisplash.stamp
 D:\AppFood\AppFood\obj\Debug\net10.0-android\mauifont.stamp
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\f\OpenSans-Regular.ttf
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\f\OpenSans-Semibold.ttf
 D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
 D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png
 D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
@@ -65,7 +55,6 @@ D:\AppFood\AppFood\obj\Debug\net10.0-android\stamp\_BuildLibraryImportsCache.sta
 D:\AppFood\AppFood\obj\Debug\net10.0-android\case_map.txt
 D:\AppFood\AppFood\obj\Debug\net10.0-android\__Microsoft.Android.Resource.Designer.cs
 D:\AppFood\AppFood\obj\Debug\net10.0-android\res.flag
-D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\2408EEC9E29B4C95-files.cache
 D:\AppFood\AppFood\obj\Debug\net10.0-android\resizetizer\65F0553728A3E0F8-files.cache
 D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\107\jl\files.cache
 D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\110\jl\files.cache
@@ -3026,8 +3015,7 @@ D:\AppFood\AppFood\obj\Debug\net10.0-android\android\src\mono\com\google\android
 D:\AppFood\AppFood\obj\Debug\net10.0-android\android\src\mono\MonoPackageManager_Resources.java
 D:\AppFood\AppFood\obj\Debug\net10.0-android\android\src\net\dot\android\ApplicationRegistration.java
 D:\AppFood\AppFood\obj\Debug\net10.0-android\assets\AboutAssets.txt
-D:\AppFood\AppFood\obj\Debug\net10.0-android\assets\OpenSans-Regular.ttf
-D:\AppFood\AppFood\obj\Debug\net10.0-android\assets\OpenSans-Semibold.ttf
+D:\AppFood\AppFood\obj\Debug\net10.0-android\assets\FoodStreet.db3
 D:\AppFood\AppFood\obj\Debug\net10.0-android\android\bin\packaged_resources
 D:\AppFood\AppFood\obj\Debug\net10.0-android\android\src\com\companyname\foodstreet\R.java
 D:\AppFood\AppFood\obj\Debug\net10.0-android\_CompileJava.FileList.txt
@@ -3055,4 +3043,3 @@ D:\AppFood\AppFood\obj\Debug\net10.0-android\stamp\_ConvertResourcesCases.stamp
 D:\AppFood\AppFood\obj\Debug\net10.0-android\stamp\_GenerateJavaStubs.stamp
 D:\AppFood\AppFood\obj\Debug\net10.0-android\stamp\_GeneratePackageManagerJava.stamp
 D:\AppFood\AppFood\obj\Debug\net10.0-android\stamp\_ResolveLibraryProjectImports.stamp
-D:\AppFood\AppFood\obj\Debug\net10.0-android\assets\FoodStreet.db3

@@ -22,13 +22,6 @@
                 </VerticalStackLayout>
             </Frame>
 
-            <Frame CornerRadius="15" Padding="15" BackgroundColor="White">
-                <Grid ColumnDefinitions="*,Auto">
-                    <Label Text="GPS chạy nền" VerticalOptions="Center"/>
-                    <Switch x:Name="gpsSwitch" Grid.Column="1"/>
-                </Grid>
-            </Frame>
-
             <Label Text="Ngôn ngữ" FontAttributes="Bold"/>
 
             <Frame CornerRadius="15" Padding="15" BackgroundColor="White">
@@ -45,7 +38,7 @@
                 </Grid>
             </Frame>
 
-            <Button Text="Reset về mặc định"
+            <Button Text="Reset Cài Đặt"
                     Margin="0,20"
                     BorderColor="Blue"
                     BorderWidth="1"

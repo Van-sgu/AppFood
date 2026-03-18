@@ -24,22 +24,30 @@ public partial class Map : ContentPage
     {
         InitializeComponent();
         _dbService = dbService;
-        _dbService = dbService;
         _notifyService = notifyService;
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        await CheckAndRequestLocationPermission();
         await LoadData();
         StartLocationTracking();
         DefaultLoc();
+    }
+    private async Task CheckAndRequestLocationPermission()
+    {
+        var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
+        if (status != PermissionStatus.Granted)
+        {
+            await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+        }
     }
     private void DefaultLoc()
     {
         try
         {
-            var vinhkhanh = new Location(10.7765, 106.6675);
+            var vinhkhanh = new Location(10.76198, 106.70226);
             var mapSpan = MapSpan.FromCenterAndRadius(vinhkhanh, Distance.FromKilometers(0.5));
             map.MoveToRegion(mapSpan);
         }
@@ -55,7 +63,6 @@ public partial class Map : ContentPage
             locations = await _dbService.GetItemsAsync();
             if (locations == null || !locations.Any()) return;
 
-            // Sử dụng một màu xanh 
             var themeColor = Color.FromRgba(0, 153, 255, 51);
 
             foreach (var loc in locations)
@@ -66,21 +73,22 @@ public partial class Map : ContentPage
                 {
                     Label = loc.Name,
                     Location = location,
-                    Type = PinType.Place
+                    Type = PinType.Place,
+                    Address = loc.Description
                 };
 
                 pin.InfoWindowClicked += async (s, e) =>
                 {
-                    // Chuyển sang trang DetailPoi và truyền dữ liệu quán ăn
                     await Navigation.PushAsync(new DetailPoi(loc));
                 };
                 map.Pins.Add(pin);
-                _Pins.Add(loc, pin);
+                if (!_Pins.ContainsKey(loc))
+                    _Pins.Add(loc, pin);
                 //Vẽ vòng tròn bán kính
                 map.MapElements.Add(new Circle
                 {
                     Center = location,
-                    Radius = new Distance(30),
+                    Radius = new Distance(10),
                     StrokeColor = Colors.Blue,
                     StrokeWidth = 2,
                     FillColor = themeColor
@@ -88,9 +96,8 @@ public partial class Map : ContentPage
             }
         }
         catch (Exception ex) 
-        { 
-            // Sửa lỗi DisplayAlert Obsolete ở đây
-            await DisplayAlert("Lỗi", ex.Message, "OK"); 
+        {
+            await Shell.Current.DisplayAlert("Lỗi nạp dữ liệu", ex.Message, "OK");
         }
     }
     private void HighlightPoi(List<POI> activePois)
@@ -133,7 +140,21 @@ public partial class Map : ContentPage
         }
         catch (Exception) { } // Tắt máy bình thường
     }
+    public void MoveToLocation(double lat, double lon)
+    {
+        var location = new Location(lat, lon);
 
+        var mapSpan = Microsoft.Maui.Maps.MapSpan.FromCenterAndRadius(location, Microsoft.Maui.Maps.Distance.FromKilometers(0.1));
+
+        map.MoveToRegion(mapSpan);
+        var targetPin = _Pins.Values.FirstOrDefault(p =>
+            Math.Abs(p.Location.Latitude - lat) < 0.0001);
+        if (targetPin != null)
+        {
+            foreach (var p in _Pins.Values) p.Type = PinType.Place;
+            targetPin.Type = PinType.SearchResult;
+        }
+    }
     protected override void OnDisappearing()
     {
         base.OnDisappearing();

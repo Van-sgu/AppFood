@@ -48,8 +48,6 @@ public class AutoNarrationEngine
 
     private async Task ProcessNearbyPois(Location userLoc)
     {
-        // Thay vì lấy HẾT database về (rất nặng nếu dùng SQL Server), 
-        // ta nên lấy danh sách POI trong một phạm vi nhất định từ Server.
         var allPois = await _dbService.GetItemsAsync();
 
         // Lọc các điểm nằm trong bán kính hoạt động

@@ -26,13 +26,10 @@ bitmap;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\commo
 bitmap;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_dark_normal.xml
 bitmap;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_disabled.xml
 bitmap;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_light_normal.xml
-bitmap;obj\Debug\net10.0-android\resizetizer\sp\drawable\maui_splash_image.xml
-bitmap;obj\Debug\net10.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 cache-path;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\176\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
 color;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\175\jl\res\values\colors.xml
 color;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\values\values.xml
 color;obj\Debug\net10.0-android\res\values\colors.xml
-color;obj\Debug\net10.0-android\resizetizer\sp\values\maui_colors.xml
 com.google.android.material.appbar.AppBarLayout;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\173\jl\res\layout\flyoutcontent.xml
 com.google.android.material.appbar.AppBarLayout;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\173\jl\res\layout\shellcontent.xml
 com.google.android.material.appbar.AppBarLayout;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\175\jl\res\layout\navigationlayout.xml
@@ -229,8 +226,6 @@ item;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_
 item;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_light.xml
 item;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_light_focused.xml
 item;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_light_normal.xml
-item;obj\Debug\net10.0-android\resizetizer\sp\drawable\maui_splash_image.xml
-item;obj\Debug\net10.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 layer-list;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\175\jl\res\drawable\maui_splash.xml
 layer-list;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\175\jl\res\drawable\maui_splash_image.xml
 layer-list;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_icon_dark_focused.xml
@@ -243,8 +238,6 @@ layer-list;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\c
 layer-list;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_disabled.xml
 layer-list;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_light_focused.xml
 layer-list;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_light_normal.xml
-layer-list;obj\Debug\net10.0-android\resizetizer\sp\drawable\maui_splash_image.xml
-layer-list;obj\Debug\net10.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 microsoft.maui.controls.platform.compatibility.ShellFlyoutLayout;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\173\jl\res\layout\flyoutcontent.xml
 monochrome;obj\Debug\net10.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 monochrome;obj\Debug\net10.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
@@ -421,7 +414,6 @@ resources;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\186\jl\res\values-zh-r
 resources;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\186\jl\res\values-zu\values.xml
 resources;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\187\jl\res\values\values.xml
 resources;obj\Debug\net10.0-android\res\values\colors.xml
-resources;obj\Debug\net10.0-android\resizetizer\sp\values\maui_colors.xml
 selector;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_icon_dark.xml
 selector;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_icon_light.xml
 selector;D:\AppFood\AppFood\obj\Debug\net10.0-android\lp\185\jl\res\drawable\common_google_signin_btn_text_dark.xml

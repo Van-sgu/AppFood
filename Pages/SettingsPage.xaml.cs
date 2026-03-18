@@ -51,8 +51,5 @@ public partial class SettingsPage : ContentPage
 
         volumeLabel.Text = "Âm lượng: 100%";
         speedLabel.Text = "Tốc độ giọng nói: 1.0x";
-
-        gpsSwitch.IsToggled = false;
-        languageLabel.Text = "Tiếng Việt";
     }
 }

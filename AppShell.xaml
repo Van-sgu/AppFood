@@ -4,25 +4,32 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:FoodStreet.Pages"
-    xmlns:local="clr-namespace:FoodStreet"
-    Title="FoodStreet">
-
+    Title="FoodStreet"
+    Shell.NavBarIsVisible="False">
+    <Shell.TitleView>
+        <Grid Padding="0,0,20,0">
+            <Label Text="Khu phố ẩm thực Vĩnh Khánh"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+        </Grid>
+    </Shell.TitleView>
     <TabBar>
-
-    <ShellContent
+        <ShellContent
+        Route="home"
+        Title="Danh sách"
+        ContentTemplate="{DataTemplate pages:MainPage}" />
+        
+        <ShellContent
             Route="map"
             Title="Bản đồ"
             ContentTemplate="{DataTemplate pages:Map}" />
 
-    <ShellContent
-            Route="home"
-            Title="Trang chủ"
-            ContentTemplate="{DataTemplate pages:MainPage}" />
-
-    <ShellContent
+        <ShellContent
             Route="settings"
             Title="Cài đặt"
             ContentTemplate="{DataTemplate pages:SettingsPage}" />
-
     </TabBar>
+    
 </Shell>

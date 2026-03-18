@@ -6,13 +6,17 @@
              xmlns:models="clr-namespace:FoodStreet.Models"
              
              xmlns:sensors="http://schemas.microsoft.com/dotnet/2021/maui/sensors"
-             x:Class="FoodStreet.Pages.Map"
-             Title="Khu phố Ẩm thực Vĩnh Khánh">
+             x:Class="FoodStreet.Pages.Map">
     <Grid>
         <maps:Map
         x:Name="map"
         IsShowingUser="True"
-        MapType="Street" />
+        IsScrollEnabled="True"
+            IsZoomEnabled="True"
+            MapType="Street"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" />
+        
     </Grid>
     
 </ContentPage>
